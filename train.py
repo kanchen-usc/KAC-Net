@@ -208,7 +208,7 @@ def run_training():
 
         for step in xrange(config.max_step):
             start_time = time.time()
-            feed_dict = update_feed_dict(cur_dataset, model, True)
+            feed_dict = update_feed_dict(cur_dataset, model, is_train)
 
             _, cur_tot_loss, cur_l_loss, cur_v_loss, cur_logits = sess.run(
                 [train_op, total_loss, l_loss, v_loss, att_logits], feed_dict=feed_dict)
@@ -220,7 +220,7 @@ def run_training():
                 cur_dataset.is_save = False
 
             if step%10 == 0:
-                cur_accu = eval_cur_batch(feed_dict[model.bbx_label], cur_logits, True)
+                cur_accu = eval_cur_batch(feed_dict[model.bbx_label], cur_logits, is_train=is_train)
                 print 'Step %d: loss = %.4f, l_loss = %.4f, v_loss = %.4f, accu = %.4f (%.4f s)'%(
                     step, cur_tot_loss, cur_l_loss, cur_v_loss, cur_accu, duration/10.0)
 
