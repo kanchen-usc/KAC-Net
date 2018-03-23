@@ -179,7 +179,7 @@ def run_evaluate():
     #Initialize the paths and parameters for the current dataset
     cur_dataset = dataprovider(train_list, test_list, config.img_feat_dir, config.global_feat_dir, config.sen_dir, config.vocab_size,
         knowledge=config.knowledge, phrase_len=config.phrase_len, batch_size=config.batch_size)
-    is_train = True
+    is_train = False
     #Initialize ground model train instance
     model = ground_model(is_train, config)
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.3)
@@ -193,7 +193,7 @@ def run_evaluate():
         init = tf.global_variables_initializer()
         sess.run(init)
         saver = tf.train.Saver(max_to_keep=200)
-        feed_dict = update_feed_dict(cur_dataset, model, True)
+        feed_dict = update_feed_dict(cur_dataset, model, is_train=is_train)
 
         # initialize_from_pretrain(sess, config, args.pretrain_id)
         saver.restore(sess, './model/%s/model_%d.ckpt'%(config.save_path, restore_id))
