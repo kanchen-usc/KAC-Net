@@ -1,5 +1,5 @@
-# MSRC System
-This repository contains tensorflow implementation for Multimodal Spatial Regression with Semantic Context (MSRC) system.
+# KAC-Net
+This repository contains tensorflow implementation for *Knowledge Aided Consistency for Weakly Supervised Phrase Grounding* in [CVPR 2018](https://arxiv.org/pdf/1803.03879).
 
 ## Setup
 
