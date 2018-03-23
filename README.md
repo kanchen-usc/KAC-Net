@@ -11,7 +11,7 @@ TODO
 
 ## Reference
 
-If you find our implementation useful in your research, please consider citing:
+If you find the repository is useful for your research, please consider citing:
 
 ```
 @inproceedings{Chen_2018_CVPR,
