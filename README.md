@@ -20,7 +20,7 @@ For training, please enter the root folder of ```KAC-Net```, then type
 ```
 $ python train.py -m [Model Name] -g [GPU ID] -k [knowledge]
 ```
-You can choose different types of knowledge (```-k``` option) as KBP values: ```coco``` and ```hard_coco``` are for soft and hard KBP values with a [VGG Network](http://www.robots.ox.ac.uk/~vgg/research/very_deep/) pre-trained on MSCOCO respectively. ```pas``` and ```hard_pas``` are for soft and hard KBP values with a VGG Network pre-trained on PASCAL VOC 2012 respectively.
+You can choose different types of knowledge (```-k``` option) as KBP values: ```coco``` and ```hard_coco``` are for soft and hard KBP values with a [VGG Network](http://www.robots.ox.ac.uk/~vgg/research/very_deep/) pre-trained on MSCOCO respectively. ```pas``` and ```hard_pas``` are for soft and hard KBP values with a VGG Network pre-trained on PASCAL VOC 2012 respectively. More details can be found in the [paper](https://arxiv.org/pdf/1803.03879).
 
 For testing, please enter the root folder of ```KAC-Net```, then type
 ```
