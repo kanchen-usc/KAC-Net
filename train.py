@@ -7,7 +7,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--model_name", type=str, default='kac')
 parser.add_argument("-g", "--gpu", type=str, default='0')
-parser.add_argument("-k", "--knowledge", type=str, default="q_dist_soft_coco")
+parser.add_argument("-k", "--knowledge", type=str, default="coco")
 parser.add_argument("--restore_id", type=int, default=0)
 parser.add_argument("--pretrain_id", type=int, default=53)
 args = parser.parse_args()

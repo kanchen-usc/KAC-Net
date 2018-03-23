@@ -67,8 +67,10 @@ class dataprovider(object):
             dec_token[:-1] = sen_token[1:]
 
             indicator[:len(sen)] = 1
-            if self.knowledge == 'hard':
-                kbp = sen_feat['q_dist'][pos_ind[sen_id]]
+            if self.knowledge == 'hard_coco':
+                kbp = sen_feat['q_dist_hard_coco'][pos_ind[sen_id]]
+            elif self.knowledge == 'hard_pas':
+                kbp = sen_feat['q_dist_hard_pas'][pos_ind[sen_id]]
             elif self.knowledge == 'coco':
                 kbp = sen_feat['q_dist_soft_coco'][pos_ind[sen_id]]
             else:
@@ -107,7 +109,7 @@ class dataprovider(object):
                 dec_batch[num_cnt] = dec_token
                 mask_batch[num_cnt] = indicator
                 
-                if self.knowledge == 'hard':
+                if 'hard' in self.knowledge:
                     kbpv_batch[num_cnt] = kbp
                     if not np.all(kbp == 0):
                         kbpl_batch[num_cnt] = kbp
@@ -127,8 +129,10 @@ class dataprovider(object):
         pos_ind = np.where(pos_ids != -1)[0]
         gt_pos_all = sen_feat['gt_pos_all']
         gt_bbx_all = sen_feat['gt_box']     # ground truth bbx for query: [xmin, ymin, xmax, ymax]
-        if self.knowledge == 'hard':
-            kbpv = sen_feat['q_dist']
+        if self.knowledge == 'hard_coco':
+            kbpv = sen_feat['q_dist_hard_coco']
+        elif self.knowledge == 'hard_pas':
+            kbpv = sen_feat['q_dist_hard_pas']
         elif self.knowledge == 'coco':
             kbpv = sen_feat['q_dist_soft_coco']
         else:
@@ -168,7 +172,7 @@ class dataprovider(object):
                 sen_token[:len(cur_sen)] = cur_sen
                 sen_feat_batch[sen_ind] = sen_token
                 mask_batch[sen_ind][:len(cur_sen)] = 1
-                if self.knowledge == 'hard':
+                if 'hard' in self.knowledge:
                     if not np.all(kbpv[sen_ind] == 0):
                         kbpl_batch[sen_ind] = kbpv[sen_ind].astype('float')
                 else:
