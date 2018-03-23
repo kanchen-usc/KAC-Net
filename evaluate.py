@@ -15,9 +15,9 @@ args = parser.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 
 #Provides data in batches for training and reads test feat for test
-from dataprovider_kac import dataprovider
+from dataprovider import dataprovider
 #Provides the model and loss functions for grouding algo
-from model_kac import ground_model
+from model import ground_model
 #Utility functions to compute iou
 from util.iou import calc_iou_cyc
 
