@@ -14,10 +14,10 @@ TODO
 If you find our implementation useful in your research, please consider citing:
 
 ```
-@inproceedings{chen2017msrc,
-  title={MSRC: Multimodal Spatial Regression with Semantic Context for Phrase Grounding},
-  author={Chen, Kan and Kovvuri, Rama and Gao, Jiyang and Nevatia, Ram},
-  booktitle={ICMR},
-  year={2017}
+@inproceedings{Chen_2018_CVPR,
+  title={Knowledge Aided Consistency for Weakly Supervised Phrase Grounding},
+  author={Chen, Kan and Gao, Jiyang and Nevatia, Ram},
+  booktitle={CVPR},
+  year={2018}
 }
 ```
