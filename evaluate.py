@@ -193,6 +193,7 @@ def run_evaluate():
         init = tf.global_variables_initializer()
         sess.run(init)
         saver = tf.train.Saver(max_to_keep=200)
+        feed_dict = update_feed_dict(cur_dataset, model, True)
 
         # initialize_from_pretrain(sess, config, args.pretrain_id)
         saver.restore(sess, './model/%s/model_%d.ckpt'%(config.save_path, restore_id))
