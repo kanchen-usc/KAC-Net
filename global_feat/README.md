@@ -1,0 +1,1 @@
+This folder stores global visual features for each image.

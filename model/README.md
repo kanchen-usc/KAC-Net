@@ -1,0 +1,1 @@
+This folder stores models generated during training

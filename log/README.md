@@ -1,0 +1,1 @@
+This folder contains log files generated during training
