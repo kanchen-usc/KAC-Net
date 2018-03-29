@@ -3,7 +3,7 @@ This repository contains tensorflow implementation for *Knowledge Aided Consiste
 
 ## Setup
 
-*Note*: Please read the feature representation files in ```feature``` and ```annotation``` directories before using the code.
+> Note: Please read the feature representation files in ```feature``` and ```annotation``` directories before using the code.
 
 **Platform:** Tensorflow-1.1.0 (python 2.7)<br/>
 **Visual features:** We use [Faster-RCNN](https://github.com/endernewton/tf-faster-rcnn) pre-trained on PASCAL 2012 VOC for [Flickr30K Entities](http://web.engr.illinois.edu/~bplumme2/Flickr30kEntities/), and pre-trained on ImageNet for [Referit Game](http://tamaraberg.com/referitgame/). Please put visual features in the ```feature``` directory (More details can be seen in the [```README.md```](./feature/README.md) in this directory).<br/>
